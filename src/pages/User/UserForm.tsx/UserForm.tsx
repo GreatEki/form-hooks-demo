@@ -1,5 +1,5 @@
 import styles from "./Userform.module.css";
-import { Input } from "../../../components";
+import { Input, SubmitBtn } from "../../../components";
 import { useForm } from "react-hook-form";
 
 type FormValues = {
@@ -12,7 +12,7 @@ const UserForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormValues>();
 
   function onSubmit(data: FormValues) {
@@ -24,7 +24,7 @@ const UserForm = () => {
       <form onSubmit={handleSubmit((data) => onSubmit(data))}>
         <Input
           name="firstName"
-          label="FirstName"
+          label="Firstname"
           register={register}
           options={{ required: "Firstname is required" }}
           errorMsg={errors?.firstName?.message}
@@ -37,7 +37,7 @@ const UserForm = () => {
           errorMsg={errors?.lastName?.message}
         />
 
-        <input type="submit" />
+        <SubmitBtn disabled={!isValid} label="Send" />
       </form>
     </div>
   );

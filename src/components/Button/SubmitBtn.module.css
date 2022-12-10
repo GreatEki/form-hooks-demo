@@ -1,0 +1,16 @@
+.submitBtn {
+    padding: .5rem 1rem;
+    background-color: rgb(69, 69, 247);
+    border-radius: 5px;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.submitBtn:disabled {
+    background-color:rgb(101, 101, 240);
+    cursor:not-allowed;
+}
