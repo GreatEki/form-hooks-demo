@@ -1,0 +1,7 @@
+.userContainer {
+    border: 1px solid green;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    margin: 10% auto;
+}
