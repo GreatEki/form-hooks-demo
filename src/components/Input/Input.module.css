@@ -20,3 +20,13 @@
     padding: 10px 0;
 
 }
+
+.errorMsg {
+    color: red;
+    background: rgb(240, 108, 108);
+    font-size: 12px;
+    padding: .5rem;
+    border-radius: 5px;
+    margin: 2px 0;
+    letter-spacing: 1.5px;
+}

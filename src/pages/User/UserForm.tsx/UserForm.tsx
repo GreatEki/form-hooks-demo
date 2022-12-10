@@ -9,7 +9,11 @@ type FormValues = {
   gender: string;
 };
 const UserForm = () => {
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
 
   function onSubmit(data: FormValues) {
     console.log(data);
@@ -18,8 +22,20 @@ const UserForm = () => {
     <div className={styles.userForm}>
       <h1> User Form</h1>
       <form onSubmit={handleSubmit((data) => onSubmit(data))}>
-        <Input name="firstName" label="FirstName" register={register} />
-        <Input name="lastName" label="Lastname" register={register} />
+        <Input
+          name="firstName"
+          label="FirstName"
+          register={register}
+          options={{ required: "Firstname is required" }}
+          errorMsg={errors?.firstName?.message}
+        />
+        <Input
+          name="lastName"
+          label="Lastname"
+          register={register}
+          options={{ required: "Lastname is required" }}
+          errorMsg={errors?.lastName?.message}
+        />
 
         <input type="submit" />
       </form>
